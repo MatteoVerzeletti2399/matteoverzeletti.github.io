@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eng. Matteo Verzeletti — Portfolio</title>
+  <title>Matteo Verzeletti — Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -39,7 +39,7 @@
     <!-- Hero -->
     <section id="hero" class="hero" aria-labelledby="hero-title">
       <div class="container stack" style="--stack-space: var(--space-3); text-align:center">
-        <h1 id="hero-title" class="hero-title">Eng. Matteo Verzeletti</h1>
+        <h1 id="hero-title" class="hero-title">Matteo Verzeletti</h1>
         <p class="hero-subtitle prose">Welcome to my digital portfolio.</p>
         <p class="hero-subtitle prose">Dive into a world of innovation, creativity, and expertise in mechatronics engineering.</p>
       </div>
@@ -81,7 +81,7 @@
           <!-- Bachelor -->
           <div class="card edu-card">
             <div class="card-body">
-              <h3 class="edu-title">Bachelor’s in Industrial Automation</h3>
+              <h3 class="edu-title">Bachelor’s in Industrial Automation Engineering</h3>
               <p class="edu-sub"><em>Università di Brescia • Sep ’18 – May ’22</em></p>
               <p class="prose">Thesis: Anthropomorphic robotic arm.</p>
               <img src="images/Unibs_2.png" alt="Università di Brescia" class="edu-logo" />
@@ -91,8 +91,8 @@
           <!-- Master -->
           <div class="card edu-card">
             <div class="card-body">
-              <h3 class="edu-title">Master’s in Mechatronics</h3>
-              <p class="edu-sub"><em>Università di Trento • Sep ’22 – Ongoing</em></p>
+              <h3 class="edu-title">Master’s in Mechatronics Engineering - Double Degree</h3>
+              <p class="edu-sub"><em>Università di Trento • Sep ’22 – Nov '25</em></p>
               <p class="prose">Specialising in embedded control systems.</p>
               <img src="images/Unitn.png" alt="Università di Trento" class="edu-logo" />
             </div>
@@ -101,8 +101,8 @@
           <!-- Double Master -->
           <div class="card edu-card">
             <div class="card-body">
-              <h3 class="edu-title">Double Master’s Degree</h3>
-              <p class="edu-sub"><em>IST Lisboa • 2023 – Ongoing</em></p>
+              <h3 class="edu-title">Master’s in Mechanical Engineering - DoubleDegree</h3>
+              <p class="edu-sub"><em>IST Lisboa • 2023 – Nov '25</em></p>
               <p class="prose">Thesis: Hybrid ankle exoskeleton via E-stim &amp; mech. actuation.</p>
               <img src="images/IST.png" alt="IST Lisboa" class="edu-logo" />
             </div>
@@ -144,7 +144,7 @@
         <article class="card work-card">
           <div class="card-body work-body">
             <h3 class="work-role">R&amp;D Engineer - ProtoChallenge competition</h3>
-            <p class="work-meta"><strong>FEB-MAG 2023</strong> • NTP NanoTechProjects, Rovereto</p>
+            <p class="work-meta"><strong>FEB-MAY 2023</strong> • NTP NanoTechProjects, Rovereto</p>
             <p class="prose">
               Thanks to ProtoChallenge competition, I worked with a team of six students from the University of Trento in
               collaboration with the company NTP Nano Tech Projects s.r.l. The goal was to re-design some components (to
@@ -154,16 +154,16 @@
 
             <div class="work-gallery">
               <figure class="work-fig">
-                <img src="images/exp2-1.jpg" alt="Motostudent prototype" />
-                <figcaption>Motostudent prototype</figcaption>
+                <img src="images/ProtoTeam.jpg" alt="ProtoChallenge Team" />
+                <figcaption>ProtoChallenge Team</figcaption>
               </figure>
               <figure class="work-fig">
-                <img src="images/exp2-2.jpg" alt="Control panel setup" />
-                <figcaption>Control panel setup</figcaption>
+                <img src="images/SomeProblems.png" alt="Some problems" />
+                <figcaption>Some problems</figcaption>
               </figure>
               <figure class="work-fig">
-                <img src="images/exp2-3.jpg" alt="Final race test" />
-                <figcaption>Final race test</figcaption>
+                <img src="images/WorkingSolution.jpg" alt="Our working solution" />
+                <figcaption>Our working solution</figcaption>
               </figure>
             </div>
           </div>
@@ -244,9 +244,17 @@
             </p>
 
             <div class="project-gallery">
-              <div class="project-ph">PICTURE 1</div>
-              <div class="project-ph">PICTURE 2</div>
-              <div class="project-ph">PICTURE 3</div>
+              <figure class="project-fig">
+                <img src="images/EnviroTeam.JPG" alt="EnviroSync team" loading="lazy">
+              </figure>
+
+              <figure class="project-fig">
+                <img src="images/EnviroFinalProduct.JPG" alt="Final product" loading="lazy">
+              </figure>
+              
+              <figure class="project-fig">
+                <img src="images/EnviroWeb.png" alt="Web platform" loading="lazy">
+              </figure>
             </div>
           </div>
         </article>
@@ -268,9 +276,24 @@
             </p>
 
             <div class="project-gallery">
-              <div class="project-ph">PICTURE 1</div>
-              <div class="project-ph">PICTURE 2</div>
-              <div class="project-ph">PICTURE 3</div>
+              <figure class="project-fig">
+                <img src="images/ParkMeTeam.jpg" alt="ParkMe team" loading="lazy">
+              </figure>
+
+              <figure class="project-fig">
+                <img src="images/ParkMe.png" alt="Sensor node on test bench" loading="lazy">
+              </figure>
+
+              <!-- Video instead of 3rd image -->
+              <figure class="project-fig">
+                <video class="project-media"
+                      controls
+                      preload="metadata"
+                      playsinline>
+                  <source src="images/ParkMeVideo.mp4" type="video/mp4">
+                  Your browser doesn’t support HTML5 video.
+                </video>
+              </figure>
             </div>
           </div>
         </article>
