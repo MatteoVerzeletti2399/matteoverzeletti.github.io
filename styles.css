@@ -215,15 +215,16 @@ header .wrap { position: relative; }
    ======================== */
 .about-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:var(--space-8); align-items:start; }
 @media (max-width: 900px){ .about-grid{ grid-template-columns:1fr; } }
-.about-photo { width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow); }
+.about-photo { width:100%; height:auto; border-radius:var(--radius); border:0px solid var(--border); box-shadow: 0 0 0 2px #f1f5f9, 0 12px 28px rgba(2,6,23,.35);; }
 .about-copy { font-size:1.05rem; color:var(--text); }
 .about-copy p + p { margin-top:var(--space-4); }
 .about-copy p { text-align:justify; hyphens:auto; }
 
+
 /* Resize the About photo (keeps aspect ratio, no cropping) */
 .about-grid > figure{
   /* scales nicely from small screens up to a max */
-  width: clamp(100px, 40vw, 200px);
+  width: clamp(100px, 60vw, 300px);
   justify-self: start;          /* prevent stretching to fill column */
 }
 
@@ -238,12 +239,33 @@ header .wrap { position: relative; }
   align-items: center;
 }
 
-/* Nudge the photo right up to the text and control its size */
-.about-grid > figure{
-  width: clamp(150, 28vw, 400px);  /* pick the range you like */
-  justify-self: end;                 /* hug the text column */
-  margin: 0;
+/* Inline location pill for About */
+.inline-location{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .25rem .6rem;
+  margin-left: .5rem;            /* a bit of space from the sentence */
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);  /* subtle on dark; faint on light */
+  color: var(--text);
+  font-weight: 800;
+  white-space: nowrap;           /* keep icon + text together */
 }
+
+.inline-location .pin{
+  width: 1.1em;
+  height: 1.1em;
+  display: inline-block;
+}
+
+/* Optional: small hover lift */
+.inline-location:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2,6,23,.18);
+}
+
 
 /* ========================
    Education
@@ -463,6 +485,52 @@ header .wrap { position: relative; }
 }
 .hob-col .langhob-heading{ text-align: center; }
 
+/* Tooltip for hobbies */
+.hobby-fig{ position: relative; outline: none; }
+
+/* The bubble */
+.hobby-fig::after{
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);         /* above the circle */
+  transform: translateX(-50%) translateY(4px);
+  padding: .4rem .6rem;
+  border-radius: 10px;
+  background: rgba(15,23,42,.95);
+  color: #fff;
+  font-weight: 800;
+  font-size: .95rem;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(2,6,23,.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 2;
+}
+
+/* Little arrow under the bubble */
+.hobby-fig::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(15,23,42,.95);
+  opacity: 0;
+  transition: opacity .15s ease;
+  z-index: 2;
+}
+
+/* Show on hover or keyboard focus */
+.hobby-fig:hover::after,
+.hobby-fig:focus-visible::after,
+.hobby-fig:hover::before,
+.hobby-fig:focus-visible::before{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 
 /* Bigger footer heading */
