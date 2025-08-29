@@ -382,6 +382,40 @@ header .wrap { position: relative; }
 .op-skills { font-weight: 600; margin-top: .35rem; }
 .op-skills strong { font-weight: 900; }
 
+/* =====================
+   Competences & Skills
+   ===================== */
+.skills-section{ background:#eaf2ff; } /* same backdrop as adjacent sections */
+
+.skills-head{
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-bottom:.6rem;
+}
+
+/* Pretty bullet lists */
+.skills-list{
+  margin:0;
+  padding-left:1.1em;              /* keep native bullets but tighten */
+  display:grid;
+  row-gap:.35rem;
+  font-size:1.02rem;
+}
+.skills-list li{ line-height:1.65; }
+.skills-list li::marker{ color:var(--primary); } /* subtle brand color bullets */
+
+/* Dark mode contrast (optional) */
+@media (prefers-color-scheme: dark){
+  .skills-section{ background:#0f172a; }
+  .skills-head{ color:#e5e7eb; }
+  .skills-list li{ color:#cbd5e1; }
+  .skills-list li::marker{ color:#60a5fa; }
+}
+
+
+
+
 /* ========================
    Languages & Hobbies
    ======================== */
@@ -429,17 +463,23 @@ header .wrap { position: relative; }
 }
 .hob-col .langhob-heading{ text-align: center; }
 
-/* Footer fixes */
-footer.site-footer{
-  margin-top: 0;   /* removes the dark gap */
-  border-top: 0;   /* in case an earlier rule set a top border */
-}
+
 
 /* Bigger footer heading */
 .footer-title{
   font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem);
   letter-spacing: .06em; /* optional: a touch more tracking */
 }
+
+/* Make "Connect and Contact Me" match the rest of the site */
+footer.site-footer{
+  background: var(--bg);     /* same background token used by other sections */
+  color: var(--text);        /* inherit the site text color */
+  margin-top: 0;   /* removes the dark gap */
+  border-top: 1px solid var(--border); /* subtle separator like other sections */
+}
+
+
 
 @media (max-width: 900px){
   .lang-col .lang-item { grid-template-columns: 120px 1fr; }
